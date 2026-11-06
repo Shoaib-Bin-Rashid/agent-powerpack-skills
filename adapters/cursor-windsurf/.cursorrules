@@ -1,0 +1,25 @@
+# Cursor & Windsurf Rules for Agent Powerpack
+
+## Multi-Agent & Orchestration Mode (/teamform)
+When prompted with "teamform" or asked to execute a large, complex feature:
+1. Act as Lead Architect and Orchestrator.
+2. Break down the task into 2-3 disjoint domain layers:
+   - Layer 1: Frontend / UI / Client
+   - Layer 2: Backend / API / Database Schema
+   - Layer 3: Tests / Verification / Documentation
+3. Implement each boundary with strict write isolation (never mix edits across files simultaneously).
+4. Integrate all layers centrally and run automated builds/tests.
+5. Perform an adversarial loophole audit before marking the task complete.
+
+## Adversarial Hard Review Mode (/hard-review)
+When prompted with "hard-review" or asked to review code/specifications:
+1. Operate in STRICT READ-ONLY mode. Do NOT automatically modify source code or apply fixes.
+2. Inspect the artifacts across four core dimensions:
+   - Requirement Completeness & 100% Bidirectional Traceability.
+   - System Architecture & Non-Functional Limits.
+   - Security & Authorization (Row-Level Security, connection roles, injection).
+   - Concurrency & QA (Race conditions, locking, transaction boundaries).
+3. Output findings using the standardized finding matrix:
+   - Severity: Blocker, High, Medium, Low, Advisory.
+   - File path and exact line references.
+   - Actionable diff remediation proposals.

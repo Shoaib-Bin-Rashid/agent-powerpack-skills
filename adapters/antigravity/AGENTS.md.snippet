@@ -1,0 +1,11 @@
+# Antigravity Global Routing Rules Snippet
+# Add to ~/.gemini/AGENTS.md or project-level AGENTS.md
+
+## Conflict-Free Routing Policy
+- Small / Routine tasks: Main Agent executes directly in-session without spawning subagents.
+- Large / Complex tasks: Default to `/teamform` workflow (Main Agent acts as Orchestrator, decomposes into 2-3 native subagents with write isolation, integrates centrally, and runs EGM final loophole check).
+- When `/teamwork` is invoked: Native multi-agent team handles full orchestration; `/teamform` yields.
+- When `/hard-review` is invoked: Dedicated adversarial review executes strictly read-only by default across requirements, architecture, security/RLS, and concurrency.
+- Concurrency limit: Cap at 4 concurrent subagents max (normally 2-3).
+- Write isolation: Parallel read-only scans allowed; concurrent edits to the same file or schema strictly prohibited.
+- Product Owner release gate: Strictly prohibit unapproved production release, milestone sign-off, or issue closure without human PO approval.
